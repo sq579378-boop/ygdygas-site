@@ -1,43 +1,32 @@
-import {headers} from "next/headers";
+export const dynamic = "force-dynamic";
 
+import { headers } from "next/headers";
 import Template from "./template";
-
-import {getSite} from "@/lib/site";
-
+import { getSite } from "../lib/site";
 
 
-export default async function Home(){
+export default async function Home() {
+
+  const headerList = await headers();
+
+  const host = headerList.get("host") || "";
 
 
-const headerList =
-await headers();
+  const site = getSite(host);
 
 
+  return (
 
-const host =
-headerList.get("host")
-||
-"";
+    <Template
 
+      title={site.title}
 
+      keywords={site.keywords}
 
-const site =
-getSite(host);
+      description={site.description}
 
+    />
 
-
-return (
-
-<Template
-
-title={site.title}
-
-keywords={site.keywords}
-
-description={site.description}
-
-/>
-
-)
+  );
 
 }
