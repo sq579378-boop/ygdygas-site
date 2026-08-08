@@ -1,68 +1,57 @@
-import {headers} from "next/headers";
-
-import {getSite} from "@/lib/site";
-
+import { headers } from "next/headers";
+import { getSite } from "../lib/site";
 
 
-export async function generateMetadata(){
+export const dynamic = "force-dynamic";
 
 
-const headerList =
-await headers();
+export async function generateMetadata() {
+
+  const headerList = await headers();
+
+  const host = headerList.get("host") || "";
 
 
-
-const host =
-headerList.get("host")
-||
-"";
+  const site = getSite(host);
 
 
+  return {
 
-const site =
-getSite(host);
+    title: site.title,
 
+    description: site.description,
 
+    keywords: site.keywords
 
-return {
-
-title:site.title,
-
-description:site.description,
-
-keywords:site.keywords
-
-};
-
+  };
 
 }
 
 
 
-
 export default function RootLayout({
 
-children
+  children
 
-}:{
+}: {
 
-children:React.ReactNode
+  children: React.ReactNode
 
-}){
+}) {
 
 
-return (
+  return (
 
-<html lang="zh-CN">
+    <html lang="zh-CN">
 
-<body>
+      <body>
 
-{children}
+        {children}
 
-</body>
+      </body>
 
-</html>
+    </html>
 
-)
+  );
 
 }
