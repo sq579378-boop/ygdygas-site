@@ -2,6 +2,27 @@ import fs from "fs";
 import path from "path";
 
 
+function hash(str: string) {
+
+  let hash = 0;
+
+  for (let i = 0; i < str.length; i++) {
+
+    hash =
+      (hash << 5) -
+      hash +
+      str.charCodeAt(i);
+
+    hash |= 0;
+
+  }
+
+  return Math.abs(hash);
+
+}
+
+
+
 export function getSite(host: string) {
 
 
@@ -19,26 +40,31 @@ export function getSite(host: string) {
 
 
 
-  let subdomain = host.split(".")[0];
+  if (list.length === 0) {
 
+    return {
 
-  let number = parseInt(subdomain);
+      title: "默认标题",
 
+      keywords: "默认关键词",
 
+      description: "默认描述"
 
-  if (isNaN(number)) {
-
-    number = 1;
+    };
 
   }
 
 
 
-  let index = (number - 1) % list.length;
+  // 根据域名固定随机
+
+  const index =
+    hash(host) % list.length;
 
 
 
-  const item = list[index].split("|");
+  const item =
+    list[index].split("|");
 
 
 
