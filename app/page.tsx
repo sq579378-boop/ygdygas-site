@@ -1,20 +1,15 @@
 import { headers } from "next/headers";
 import { getSite } from "../lib/site";
 
-
 export default async function Home() {
 
-
   const headerList = await headers();
-
 
   const host =
     headerList.get("host") || "";
 
-
   const site =
     getSite(host);
-
 
 
   return (
@@ -25,13 +20,9 @@ export default async function Home() {
       <section id="header">
 
         <h1>
-
           <a href="#">
-
-            {site.title}
-
+            VX账号服务平台
           </a>
-
         </h1>
 
       </section>
@@ -43,18 +34,13 @@ export default async function Home() {
         <header>
 
           <h2>
-
-            {site.title}
-
+            专业微信账号服务商
           </h2>
 
 
           <p>
-
-            {site.description}
-
+            提供专业微信账号服务解决方案
           </p>
-
 
         </header>
 
@@ -64,29 +50,32 @@ export default async function Home() {
 
       <section className="wrapper style1">
 
-
         <div className="container">
 
 
-          <h3>
+          <header className="major">
 
-            服务项目
+            <h2>
+              服务项目
+            </h2>
 
-          </h3>
+          </header>
+
 
 
           <p>
+            微信账号资源服务
+          </p>
 
+
+          <p>
             {site.keywords}
-
           </p>
 
 
         </div>
 
-
       </section>
-
 
 
     </div>
