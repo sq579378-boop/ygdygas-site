@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
+import { getSite } from "../lib/site";
 
-export const metadata: Metadata = {
-  title: "测试123456",
-  description: "专业微信账号服务商",
-};
+
+export async function generateMetadata(): Promise<Metadata> {
+
+  const headerList = await headers();
+
+  const host = headerList.get("host") || "";
+
+  const site = getSite(host);
+
+
+  return {
+    title: site.title,
+    description: site.description,
+  };
+
+}
+
 
 
 export default function RootLayout({
@@ -16,21 +31,6 @@ export default function RootLayout({
   return (
 
     <html lang="zh-CN">
-
-      <head>
-
-        <link
-          rel="stylesheet"
-          href="/assets/css/main.css"
-        />
-
-        <link
-          rel="stylesheet"
-          href="/assets/css/fontawesome-all.min.css"
-        />
-
-      </head>
-
 
       <body>
 
