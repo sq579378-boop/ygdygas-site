@@ -1,237 +1,270 @@
 import { headers } from "next/headers";
-import { getSite } from "../lib/site";
+import { getSite } from "@/lib/site";
 
 
 export default async function Home() {
 
+
   const headerList = await headers();
 
-  const host = headerList.get("host") || "";
+  const host =
+    headerList.get("host") || "default";
 
-  const site = getSite(host);
+
+  const site =
+    getSite(host);
+
 
 
   return (
 
-    <>
-
-      <div id="page-wrapper">
+    <div id="page-wrapper">
 
 
-        {/* Header */}
+      {/* Header */}
 
-        <section id="header">
+      <section id="header">
 
-          <h1>
-            {site.title}
-          </h1>
+
+        <h1>
+
+          {site.title}
+
+        </h1>
+
+
+        <p>
+
+          专业微信账号服务平台
+
+        </p>
+
+
+      </section>
+
+
+
+
+      {/* Banner */}
+
+      <section id="banner">
+
+
+        <header>
+
+
+          <h2>
+
+            专业微信账号服务商
+
+          </h2>
 
 
           <p>
-            专业微信账号服务平台
+
+            {site.description}
+
           </p>
 
 
-        </section>
+        </header>
+
+
+      </section>
 
 
 
-        {/* Banner */}
 
-        <section id="banner">
+      {/* Features */}
 
-          <header>
+      <section className="wrapper style1">
+
+
+        <div className="container">
+
+
+          <header className="major">
+
 
             <h2>
-              专业微信账号服务商
+
+              微信账号服务
+
             </h2>
 
 
             <p>
-              提供稳定、高效的微信账号资源服务
+
+              稳定服务，快速响应
+
             </p>
 
 
           </header>
 
 
-        </section>
+
+          <div className="row">
+
+
+            <div className="col-4 col-12-medium">
+
+              <section>
+
+                <h3>
+                  优质资源
+                </h3>
+
+
+                <p>
+                  提供多种微信账号服务选择。
+                </p>
+
+
+              </section>
+
+            </div>
 
 
 
-        {/* Features */}
 
-        <section className="wrapper style1">
+            <div className="col-4 col-12-medium">
 
-          <div className="container">
+              <section>
 
-
-            <header className="major">
-
-              <h2>
-                微信账号服务
-              </h2>
+                <h3>
+                  快速交付
+                </h3>
 
 
-              <p>
-                专业服务，为客户提供便捷体验
-              </p>
+                <p>
+                  简化流程，提高服务效率。
+                </p>
 
 
-            </header>
+              </section>
+
+            </div>
 
 
 
-            <div className="row">
+
+            <div className="col-4 col-12-medium">
+
+              <section>
+
+                <h3>
+                  售后支持
+                </h3>
 
 
-              <div className="col-4 col-12-medium">
-
-                <section>
-
-                  <h3>
-                    优质资源
-                  </h3>
-
-                  <p>
-                    提供丰富账号资源选择。
-                  </p>
-
-                </section>
-
-              </div>
+                <p>
+                  提供完善服务保障。
+                </p>
 
 
-
-              <div className="col-4 col-12-medium">
-
-                <section>
-
-                  <h3>
-                    快速服务
-                  </h3>
-
-                  <p>
-                    快速响应客户需求。
-                  </p>
-
-                </section>
-
-              </div>
-
-
-
-              <div className="col-4 col-12-medium">
-
-                <section>
-
-                  <h3>
-                    售后支持
-                  </h3>
-
-                  <p>
-                    提供完善服务支持。
-                  </p>
-
-                </section>
-
-              </div>
-
+              </section>
 
             </div>
 
 
           </div>
 
-        </section>
+
+        </div>
+
+
+      </section>
 
 
 
 
 
-        {/* Main */}
 
-        <section className="wrapper style2">
+      {/* About */}
 
-          <div className="container">
-
-
-            <header>
-
-              <h2>
-                关于我们
-              </h2>
+      <section className="wrapper style2">
 
 
-            </header>
+        <div className="container">
 
 
-            <p>
+          <header>
 
-              我们专注微信账号服务领域，
-              致力于提供专业、便捷的账号资源服务。
+            <h2>
 
-            </p>
+              关于我们
+
+            </h2>
 
 
+          </header>
 
-            <p>
 
-              {site.description}
+          <p>
 
-            </p>
+            我们专注微信账号服务领域，
+            为用户提供专业的账号服务方案。
+
+          </p>
 
 
 
-          </div>
+          <p>
 
+            当前站点关键词：
 
-        </section>
+            {site.keywords}
 
-
-
-
-
-        {/* Footer */}
-
-        <section id="footer">
-
-          <div className="container">
-
-
-            <header>
-
-              <h2>
-                联系我们
-              </h2>
-
-            </header>
-
-
-            <p>
-
-              如需了解更多服务，请联系客服。
-
-            </p>
-
-
-          </div>
-
-
-        </section>
-
-
-      </div>
+          </p>
 
 
 
-      <link
-        rel="stylesheet"
-        href="/assets/css/main.css"
-      />
+        </div>
 
 
-    </>
+      </section>
+
+
+
+
+
+
+      {/* Footer */}
+
+      <section id="footer">
+
+
+        <div className="container">
+
+
+          <header>
+
+            <h2>
+
+              联系我们
+
+            </h2>
+
+
+          </header>
+
+
+          <p>
+
+            欢迎咨询微信账号相关服务。
+
+          </p>
+
+
+        </div>
+
+
+      </section>
+
+
+
+    </div>
 
   );
 
