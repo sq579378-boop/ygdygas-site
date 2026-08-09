@@ -11,23 +11,25 @@ export default async function Home() {
   const site = getSite(host);
 
 
+  const imgStyle = {
+    width: "100%",
+    height: "220px",
+    objectFit: "cover" as const,
+    borderRadius: "8px"
+  };
+
+
   return (
 
     <div id="page-wrapper">
 
 
-      {/* Header */}
-
       <section id="header">
 
         <h1>
-
           <a href="#">
-
             {site.title}
-
           </a>
-
         </h1>
 
 
@@ -74,36 +76,27 @@ export default async function Home() {
 
 
 
-      {/* Banner */}
-
       <section id="banner">
 
         <header>
 
           <h2>
-
             专业微信账号服务商
-
           </h2>
 
 
           <p>
-
             {site.description}
-
           </p>
 
 
         </header>
-
 
       </section>
 
 
 
 
-
-      {/* 服务 */}
 
       <section id="service" className="wrapper style1">
 
@@ -115,7 +108,6 @@ export default async function Home() {
             <h2>
               服务项目
             </h2>
-
 
           </header>
 
@@ -132,23 +124,17 @@ export default async function Home() {
                 <img
                   src="/images/pic01.jpg"
                   alt="微信账号资源"
-                  style={{
-                    width:"100%"
-                  }}
+                  style={imgStyle}
                 />
 
 
                 <h3>
-
                   微信账号资源
-
                 </h3>
 
 
                 <p>
-
                   提供稳定可靠的微信账号资源服务。
-
                 </p>
 
 
@@ -169,23 +155,17 @@ export default async function Home() {
                 <img
                   src="/images/pic02.jpg"
                   alt="专业服务"
-                  style={{
-                    width:"100%"
-                  }}
+                  style={imgStyle}
                 />
 
 
                 <h3>
-
                   专业服务
-
                 </h3>
 
 
                 <p>
-
                   快速响应客户需求，提供便捷服务流程。
-
                 </p>
 
 
@@ -207,23 +187,17 @@ export default async function Home() {
                 <img
                   src="/images/pic03.jpg"
                   alt="售后支持"
-                  style={{
-                    width:"100%"
-                  }}
+                  style={imgStyle}
                 />
 
 
                 <h3>
-
                   售后支持
-
                 </h3>
 
 
                 <p>
-
                   提供持续服务支持。
-
                 </p>
 
 
@@ -245,8 +219,6 @@ export default async function Home() {
 
 
 
-      {/* 关于我们 */}
-
       <section id="about" className="wrapper style2">
 
 
@@ -255,18 +227,13 @@ export default async function Home() {
 
           <header className="major">
 
-
             <h2>
-
               关于我们
-
             </h2>
 
 
             <p>
-
               专注微信账号服务领域
-
             </p>
 
 
@@ -281,15 +248,9 @@ export default async function Home() {
 
 
               <img
-
                 src="/images/pic04.jpg"
-
                 alt="关于我们"
-
-                style={{
-                  width:"100%"
-                }}
-
+                style={imgStyle}
               />
 
 
@@ -301,26 +262,19 @@ export default async function Home() {
 
 
               <h3>
-
                 专业微信账号服务平台
-
               </h3>
 
 
               <p>
-
                 我们专注于微信账号服务领域，
                 为用户提供稳定、高效的服务体验。
-
               </p>
 
 
               <p>
-
                 关键词：
-
                 {site.keywords}
-
               </p>
 
 
@@ -339,10 +293,7 @@ export default async function Home() {
 
 
 
-      {/* 联系 */}
-
       <section id="contact" className="wrapper style1">
-
 
         <div className="container">
 
@@ -350,24 +301,18 @@ export default async function Home() {
           <header>
 
             <h2>
-
               联系我们
-
             </h2>
 
           </header>
 
 
-
           <p>
-
             如需了解更多服务信息，欢迎联系我们。
-
           </p>
 
 
         </div>
-
 
       </section>
 
@@ -375,24 +320,18 @@ export default async function Home() {
 
 
 
-      {/* Footer */}
-
       <section id="footer">
 
         <div className="container">
 
 
           <p>
-
             {site.title}
-
           </p>
 
 
           <p>
-
             {site.description}
-
           </p>
 
 
