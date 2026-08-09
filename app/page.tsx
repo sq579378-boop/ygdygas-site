@@ -4,11 +4,13 @@ import { getSite } from "../lib/site";
 
 export default async function Home() {
 
+
   const headerList = await headers();
 
   const host = headerList.get("host") || "";
 
   const site = getSite(host);
+
 
 
   const imgStyle = {
@@ -24,48 +26,75 @@ export default async function Home() {
     <div id="page-wrapper">
 
 
+
+      {/* 顶部导航 */}
+
       <section id="header">
 
+
         <h1>
+
           <a href="#">
+
             {site.title}
+
           </a>
+
         </h1>
+
 
 
         <nav id="nav">
 
           <ul>
 
+
             <li className="current">
+
               <a href="#">
+
                 首页
+
               </a>
+
             </li>
 
 
             <li>
+
               <a href="#service">
+
                 服务
+
               </a>
+
             </li>
 
 
             <li>
+
               <a href="#about">
+
                 关于我们
+
               </a>
+
             </li>
 
 
             <li>
+
               <a href="#contact">
+
                 联系
+
               </a>
+
             </li>
 
 
           </ul>
+
 
         </nav>
 
@@ -76,21 +105,47 @@ export default async function Home() {
 
 
 
+
+      {/* 首页展示 */}
+
       <section id="banner">
+
 
         <header>
 
+
           <h2>
+
             专业微信账号服务商
+
           </h2>
 
 
+
           <p>
+
             {site.description}
+
           </p>
 
 
+
+          <br />
+
+
+          <a 
+            href="#contact"
+            className="button"
+          >
+
+            立即咨询
+
+          </a>
+
+
+
         </header>
+
 
       </section>
 
@@ -98,49 +153,83 @@ export default async function Home() {
 
 
 
+
+
+      {/* 服务项目 */}
+
       <section id="service" className="wrapper style1">
+
 
         <div className="container">
 
 
           <header className="major">
 
+
             <h2>
+
               服务项目
+
             </h2>
 
+
+            <p>
+
+              为客户提供专业、高效的微信账号服务方案
+
+            </p>
+
+
           </header>
+
+
 
 
 
           <div className="row">
 
 
+
             <div className="col-4 col-12-medium">
+
 
               <section className="box">
 
 
                 <img
+
                   src="/images/pic01.jpg"
-                  alt="微信账号资源"
+
+                  alt="账号资源"
+
                   style={imgStyle}
+
                 />
 
 
+
                 <h3>
+
                   微信账号资源
+
                 </h3>
 
 
+
                 <p>
-                  提供稳定可靠的微信账号资源服务。
+
+                  提供多类型账号资源选择，
+                  满足不同使用需求。
+
                 </p>
 
 
               </section>
 
+
             </div>
+
+
 
 
 
@@ -153,19 +242,30 @@ export default async function Home() {
 
 
                 <img
+
                   src="/images/pic02.jpg"
-                  alt="专业服务"
+
+                  alt="快速服务"
+
                   style={imgStyle}
+
                 />
 
 
+
                 <h3>
-                  专业服务
+
+                  快速服务
+
                 </h3>
 
 
+
                 <p>
-                  快速响应客户需求，提供便捷服务流程。
+
+                  简化流程，提高服务效率，
+                  快速响应客户需求。
+
                 </p>
 
 
@@ -173,6 +273,9 @@ export default async function Home() {
 
 
             </div>
+
+
+
 
 
 
@@ -185,19 +288,30 @@ export default async function Home() {
 
 
                 <img
+
                   src="/images/pic03.jpg"
+
                   alt="售后支持"
+
                   style={imgStyle}
+
                 />
 
 
+
                 <h3>
+
                   售后支持
+
                 </h3>
 
 
+
                 <p>
-                  提供持续服务支持。
+
+                  提供持续服务支持，
+                  保障服务体验。
+
                 </p>
 
 
@@ -205,6 +319,7 @@ export default async function Home() {
 
 
             </div>
+
 
 
           </div>
@@ -219,7 +334,10 @@ export default async function Home() {
 
 
 
-      <section id="about" className="wrapper style2">
+
+      {/* 服务优势 */}
+
+      <section className="wrapper style2">
 
 
         <div className="container">
@@ -227,17 +345,120 @@ export default async function Home() {
 
           <header className="major">
 
+
             <h2>
+
+              我们的优势
+
+            </h2>
+
+
+          </header>
+
+
+
+          <div className="row">
+
+
+            <div className="col-4 col-12-medium">
+
+
+              <h3>
+
+                稳定资源
+
+              </h3>
+
+
+              <p>
+
+                提供稳定可靠的服务资源。
+
+              </p>
+
+
+            </div>
+
+
+
+
+
+            <div className="col-4 col-12-medium">
+
+
+              <h3>
+
+                专业服务
+
+              </h3>
+
+
+              <p>
+
+                专注行业服务经验。
+
+              </p>
+
+
+            </div>
+
+
+
+
+
+            <div className="col-4 col-12-medium">
+
+
+              <h3>
+
+                安心售后
+
+              </h3>
+
+
+              <p>
+
+                提供完善售后支持。
+
+              </p>
+
+
+            </div>
+
+
+
+          </div>
+
+
+        </div>
+      {/* 关于我们 */}
+
+      <section id="about" className="wrapper style1">
+
+
+        <div className="container">
+
+
+          <header className="major">
+
+
+            <h2>
+
               关于我们
+
             </h2>
 
 
             <p>
+
               专注微信账号服务领域
+
             </p>
 
 
           </header>
+
+
 
 
 
@@ -248,9 +469,13 @@ export default async function Home() {
 
 
               <img
+
                 src="/images/pic04.jpg"
+
                 alt="关于我们"
+
                 style={imgStyle}
+
               />
 
 
@@ -258,23 +483,43 @@ export default async function Home() {
 
 
 
+
+
             <div className="col-6 col-12-medium">
 
 
               <h3>
-                专业微信账号服务平台
+
+                VX账号服务平台
+
               </h3>
 
 
+
               <p>
-                我们专注于微信账号服务领域，
-                为用户提供稳定、高效的服务体验。
+
+                我们专注微信账号服务领域，
+                致力于提供稳定、高效、便捷的服务体验。
+
               </p>
 
 
+
               <p>
+
+                平台拥有完善的服务流程，
+                为客户提供专业咨询和售后支持。
+
+              </p>
+
+
+
+              <p>
+
                 关键词：
+
                 {site.keywords}
+
               </p>
 
 
@@ -293,26 +538,100 @@ export default async function Home() {
 
 
 
-      <section id="contact" className="wrapper style1">
+
+      {/* 联系我们 */}
+
+      <section id="contact" className="wrapper style2">
+
 
         <div className="container">
 
 
-          <header>
+          <header className="major">
+
 
             <h2>
+
               联系我们
+
             </h2>
+
+
+            <p>
+
+              欢迎咨询相关服务信息
+
+            </p>
+
 
           </header>
 
 
-          <p>
-            如需了解更多服务信息，欢迎联系我们。
-          </p>
+
+
+
+          <div className="row">
+
+
+            <div className="col-6 col-12-medium">
+
+
+              <h3>
+
+                在线咨询
+
+              </h3>
+
+
+              <p>
+
+                如需了解更多服务内容，
+                欢迎联系我们。
+
+              </p>
+
+
+              <a 
+                href="#"
+                className="button"
+              >
+
+                联系客服
+
+              </a>
+
+
+            </div>
+
+
+
+
+
+            <div className="col-6 col-12-medium">
+
+
+              <h3>
+
+                服务时间
+
+              </h3>
+
+
+              <p>
+
+                全天在线提供咨询服务。
+
+              </p>
+
+
+            </div>
+
+
+          </div>
 
 
         </div>
+
 
       </section>
 
@@ -320,18 +639,59 @@ export default async function Home() {
 
 
 
+
+      {/* SEO关键词区域 */}
+
+      <section className="wrapper style1">
+
+
+        <div className="container">
+
+
+          <h3>
+
+            热门服务关键词
+
+          </h3>
+
+
+
+          <p>
+
+            {site.keywords}
+
+          </p>
+
+
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+      {/* Footer */}
+
       <section id="footer">
+
 
         <div className="container">
 
 
           <p>
+
             {site.title}
+
           </p>
 
 
           <p>
+
             {site.description}
+
           </p>
 
 
@@ -339,6 +699,7 @@ export default async function Home() {
 
 
       </section>
+
 
 
     </div>
@@ -346,3 +707,5 @@ export default async function Home() {
   );
 
 }
+
+      </section>
