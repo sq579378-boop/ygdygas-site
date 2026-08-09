@@ -6,49 +6,69 @@ export default async function Home() {
 
   const headerList = await headers();
 
-  const host =
-    headerList.get("host") || "";
+  const host = headerList.get("host") || "";
 
-
-  const site =
-    getSite(host);
+  const site = getSite(host);
 
 
   return (
 
-    <main>
-
-      <h1>
-        {site.title}
-      </h1>
+    <div id="page-wrapper">
 
 
-      <p>
-        {site.description}
-      </p>
+      <section id="header">
+
+        <h1>
+          <a href="#">
+            {site.title}
+          </a>
+        </h1>
+
+      </section>
 
 
-      <p>
-        关键词：
-        {site.keywords}
-      </p>
+
+      <section id="banner">
+
+        <header>
+
+          <h2>
+            专业微信账号服务商
+          </h2>
 
 
-      <hr />
+          <p>
+            {site.description}
+          </p>
+
+        </header>
 
 
-      <h2>
-        专业微信账号服务商
-      </h2>
+      </section>
 
 
-      <p>
-        当前访问域名：
-        {host}
-      </p>
+
+      <section className="wrapper style1">
+
+        <div className="container">
+
+          <h3>
+            服务项目
+          </h3>
 
 
-    </main>
+          <p>
+            {site.keywords}
+          </p>
+
+
+        </div>
+
+      </section>
+
+
+
+    </div>
 
   );
 
