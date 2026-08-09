@@ -1,7 +1,6 @@
 import { headers } from "next/headers";
 import { getSite } from "../lib/site";
 
-
 export default async function Home() {
 
   const headerList = await headers();
@@ -9,7 +8,6 @@ export default async function Home() {
   const host = headerList.get("host") || "";
 
   const site = getSite(host);
-
 
   const imgStyle = {
     width: "100%",
@@ -81,7 +79,7 @@ export default async function Home() {
         <header>
 
           <h2>
-            专业微信账号服务商
+            {site.title}
           </h2>
 
 
@@ -90,7 +88,19 @@ export default async function Home() {
           </p>
 
 
+          <br />
+
+
+          <a 
+            href="#contact"
+            className="button"
+          >
+            立即咨询
+          </a>
+
+
         </header>
+
 
       </section>
 
